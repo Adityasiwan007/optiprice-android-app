@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activity.PaymentActivity">
+
+    <ImageView
+        android:id="@+id/cartback"
+        android:layout_width="22dp"
+        android:layout_height="27dp"
+        android:src="@drawable/missingback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Payment"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/summaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/creditcardLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/transition_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Transactions"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.780"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.10" />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cart_sum_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/transparent"
+            >
+
+            <ImageView
+                android:id="@+id/cart_sum_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cart_summary_card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+<!--            <View-->
+<!--                android:id="@+id/right_divider2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/subtext"-->
+<!--                android:layout_marginEnd="15dp"-->
+<!--                android:layout_marginStart="15dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/cart_sum_pic"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/cart_sum_pic"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="@id/cart_sum_pic"-->
+<!--                app:layout_constraintTop_toTopOf="@id/cart_sum_pic"-->
+<!--                app:layout_constraintVertical_bias="0.756" />-->
+
+            <TextView
+                android:id="@+id/cart_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Cart Summary"
+                android:textColor="@color/blue"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/cart_sum_pic"
+                app:layout_constraintEnd_toEndOf="@id/cart_sum_pic"
+                app:layout_constraintHorizontal_bias="0.216"
+                app:layout_constraintStart_toStartOf="@id/cart_sum_pic"
+                app:layout_constraintTop_toTopOf="@id/cart_sum_pic"
+                app:layout_constraintVertical_bias="0.06" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/cart_count"
+                app:layout_constraintBottom_toTopOf="@id/mail"
+                app:layout_constraintEnd_toEndOf="@id/cart_sum_pic"
+                app:layout_constraintHorizontal_bias="0.154"
+                app:layout_constraintStart_toStartOf="@id/cart_sum_pic"
+                app:layout_constraintTop_toTopOf="@id/cart_sum_pic"
+                app:layout_constraintVertical_bias="0.161" />
+
+            <TextView
+                android:id="@+id/maintext_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Total 7 Items  : $300"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@id/subtext_cart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.156"
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toTopOf="@id/cart_sum_pic" />
+
+            <TextView
+                android:id="@+id/subtext_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Catagory"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@id/maintext_mail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.102"
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toBottomOf="@+id/maintext_cart" />
+
+            <ImageView
+                android:id="@+id/mail"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:src="@drawable/mail"
+                app:layout_constraintBottom_toTopOf="@+id/packing"
+                app:layout_constraintEnd_toEndOf="@id/cart_sum_pic"
+                app:layout_constraintHorizontal_bias="0.132"
+                app:layout_constraintStart_toStartOf="@id/cart_sum_pic"
+                app:layout_constraintTop_toBottomOf="@+id/imageView14"
+                app:layout_constraintVertical_bias="0.473" />
+
+            <TextView
+                android:id="@+id/maintext_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Shipping          : $7"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@id/subtext_mail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.138"
+                app:layout_constraintStart_toEndOf="@+id/mail"
+                app:layout_constraintTop_toBottomOf="@+id/subtext_cart" />
+
+            <TextView
+                android:id="@+id/subtext_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Via Mail"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toTopOf="@id/maintext_packing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.097"
+                app:layout_constraintStart_toEndOf="@+id/mail"
+                app:layout_constraintTop_toBottomOf="@+id/maintext_mail" />
+
+            <ImageView
+                android:id="@+id/packing"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="45dp"
+                android:src="@drawable/packing"
+                app:layout_constraintBottom_toBottomOf="@id/cart_sum_pic"
+                app:layout_constraintEnd_toEndOf="@id/cart_sum_pic"
+                app:layout_constraintHorizontal_bias="0.154"
+                app:layout_constraintStart_toStartOf="@id/cart_sum_pic"
+                app:layout_constraintTop_toBottomOf="@id/mail"
+                app:layout_constraintVertical_bias="0.683" />
+
+            <TextView
+                android:id="@+id/maintext_packing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Packing           : $3"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@id/subtext_packing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.148"
+                app:layout_constraintStart_toEndOf="@+id/packing"
+                app:layout_constraintTop_toBottomOf="@+id/subtext_mail" />
+
+            <TextView
+                android:id="@+id/subtext_packing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Bluedart"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cart_sum_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.107"
+                app:layout_constraintStart_toEndOf="@+id/packing"
+                app:layout_constraintTop_toBottomOf="@+id/maintext_packing" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Total Amount"
+                android:textSize="12dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cart_sum_pic"
+                app:layout_constraintVertical_bias="0.824" />
+
+            <TextView
+                android:id="@+id/total_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="$320.00"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cart_sum_pic"
+                app:layout_constraintVertical_bias="0.942" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/creditcardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/summaryLayout">
+
+        <TextView
+            android:id="@+id/card_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Select card"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toTopOf="@id/blueCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.059" />
+
+        <TextView
+            android:id="@+id/selected_card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="17dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.782"
+            app:layout_constraintStart_toEndOf="@+id/card_select"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/blueCard"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/blue_card"
+            app:layout_constraintEnd_toStartOf="@id/blackCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_select" />
+
+        <ImageView
+            android:id="@+id/blackCard"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/black_card"
+            app:layout_constraintEnd_toStartOf="@id/redCard"
+            app:layout_constraintStart_toEndOf="@+id/blueCard"
+            app:layout_constraintTop_toBottomOf="@id/card_select"
+
+            />
+
+
+        <ImageView
+            android:id="@+id/redCard"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/red_card"
+            app:layout_constraintEnd_toStartOf="@id/addCard"
+            app:layout_constraintStart_toEndOf="@+id/blackCard"
+            app:layout_constraintTop_toBottomOf="@id/card_select" />
+
+        <ImageView
+            android:id="@+id/addCard"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/add_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redCard"
+            app:layout_constraintTop_toBottomOf="@id/card_select" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/plus"
+            app:layout_constraintEnd_toEndOf="@id/addCard"
+            app:layout_constraintStart_toStartOf="@+id/addCard"
+            app:layout_constraintTop_toTopOf="@id/addCard"
+            app:layout_constraintBottom_toBottomOf="@id/addCard"
+            />
+        <!--        complete the more payment method-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add new"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/addCard"
+            app:layout_constraintEnd_toEndOf="@id/addCard"
+            app:layout_constraintHorizontal_bias="0.500"
+            app:layout_constraintStart_toStartOf="@+id/addCard"
+            app:layout_constraintTop_toTopOf="@id/addCard"
+            app:layout_constraintVertical_bias="0.800" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More payment method"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/proceed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.965"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/redCard"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <ImageView
+            android:id="@+id/proceed"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/payment_pro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blackCard"
+            app:layout_constraintVertical_bias="0.771" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

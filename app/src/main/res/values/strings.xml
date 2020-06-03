@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Optiprice</string>
+    <string name="enter_ip">Enter IP</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tops">Tops</string>
+    <string name="skirts">Skirts</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_color">Color</string>
+    <string name="title_style">Style</string>
+    <string name="title_pairwith">Pair With</string>
+    <string name="title_similar">Similar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_scroll">ScrollActivity</string>
+    <string name="title_activity_wardrbe">WardrbeActivity</string>
+    <string name="wardrobe">My Wardrobe</string>
+    <string name="alert_add_message">Do you want to add this item to your wardrobe?</string>
+    <string name="login">Login</string>
+    <string name="user_name">User Name</string>
+    <string name="category">Category</string>
+</resources>

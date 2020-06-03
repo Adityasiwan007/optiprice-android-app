@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.Fragment.SimilarFragment">
+  <android.support.v7.widget.CardView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      card_view:cardCornerRadius="25dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.068"
+      app:layout_constraintStart_toStartOf="parent"
+      android:id="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/cameraScan"
+      app:layout_constraintVertical_bias="0.00999999"
+      card_view:cardPreventCornerOverlap="false">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        tools:src="@tools:sample/avatars"
+        android:id="@+id/productImage"
+        />
+  </android.support.v7.widget.CardView>
+
+
+
+  <TextView
+      android:id="@+id/colorDesc"
+      android:layout_width="0dp"
+      android:layout_height="50dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginBottom="8dp"
+      android:fontFamily="@font/avenir_heavy"
+      android:gravity="center_vertical"
+      android:text="TextView"
+      android:textColor="@color/orange_text"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="@+id/cardView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/cardView"
+      app:layout_constraintTop_toTopOf="@+id/cardView"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <Switch
+      android:id="@+id/switchState"
+      android:layout_width="wrap_content"
+      android:layout_height="10dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginBottom="8dp"
+      android:checked="true"
+      android:switchMinWidth="50dp"
+      android:theme="@style/SwitchTheme"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      card_view:layout_constraintHorizontal_bias="0.916"
+      card_view:layout_constraintTop_toBottomOf="@id/colorDesc"
+      card_view:layout_constraintVertical_bias="0.0" />
+
+
+  <me.angeldevil.autoscrollviewpager.AutoScrollViewPager
+      android:id="@+id/viewPager"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@id/layout_dots"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/switchText"
+      />
+
+  <LinearLayout
+      android:id="@+id/layout_dots"
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:gravity="center"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toTopOf="@+id/similarText"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtZeroCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Item"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noComp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="295dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/avenir_heavy"
+        android:text="No Complimentary products"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/noSimilar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/avenir_heavy"
+        android:text="No similar products"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+      android:id="@+id/cameraScan"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginBottom="8dp"
+      android:src="@drawable/scan_top"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.95"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.01999998" />
+
+  <TextView
+      android:id="@+id/similarText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="8dp"
+      android:fontFamily="@font/avenir_heavy"
+      android:text="Similar Items"
+      android:textColor="@color/black"
+      card_view:layout_constraintBottom_toTopOf="@id/recycler"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.05"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/recycler"
+      android:layout_width="0dp"
+      android:layout_height="90dp"
+      android:elevation="30dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      card_view:layout_constraintTop_toTopOf="parent"
+      card_view:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+  <ImageView
+      android:id="@+id/store"
+      android:layout_width="15dp"
+      android:layout_height="15dp"
+      android:layout_marginEnd="6dp"
+      android:src="@drawable/store_inactive"
+      card_view:layout_constraintBottom_toBottomOf="@+id/switchState"
+      card_view:layout_constraintEnd_toStartOf="@+id/switchState"
+      card_view:layout_constraintTop_toTopOf="@+id/switchState" />
+
+  <ImageView
+      android:id="@+id/wardrobe"
+      android:layout_width="15dp"
+      android:layout_height="15dp"
+      android:src="@drawable/wardrobe_active"
+      card_view:layout_constraintBottom_toBottomOf="@+id/switchState"
+      card_view:layout_constraintEnd_toEndOf="parent"
+      card_view:layout_constraintHorizontal_bias="0.0"
+      card_view:layout_constraintStart_toEndOf="@+id/switchState"
+      card_view:layout_constraintTop_toTopOf="@+id/switchState" />
+
+  <TextView
+      android:id="@+id/switchText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginBottom="8dp"
+      android:fontFamily="@font/avenir_heavy"
+      android:text="My Wardrobe"
+      android:textColor="@color/black"
+      android:textSize="10sp"
+      card_view:layout_constraintBottom_toBottomOf="parent"
+      card_view:layout_constraintEnd_toStartOf="@+id/wardrobe"
+      card_view:layout_constraintStart_toStartOf="@+id/switchState"
+      card_view:layout_constraintTop_toTopOf="@+id/switchState"
+      card_view:layout_constraintVertical_bias="0.0" />
+
+
+</android.support.constraint.ConstraintLayout>

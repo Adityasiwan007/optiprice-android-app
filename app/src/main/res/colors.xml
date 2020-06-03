@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="black">#000000</color>
+    <color name="orange">#FF9800</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#C9C9C9</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="orange_desc">#B97F4F</color>
+    <color name="lcount_color">#4A90E2</color>
+
+</resources>
