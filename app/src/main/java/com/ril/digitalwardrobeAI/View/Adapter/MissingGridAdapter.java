@@ -60,6 +60,7 @@ public class MissingGridAdapter extends BaseAdapter {
         ImageView imageView = convertView.findViewById( R.id.image_view );
         img_url=ROOT_URL+"sell/"+missingPro.get(position).getRawImages().get(0);
         Picasso.get().load( Constants.IMAGE_THUMBNAIL_URL_WARDROBE + missingPro.get(position).getRawImages().get(0)).into(imageView);
+       // Picasso.get().load( img_url).into(imageView);
         for(int i=0;i<sold.size();i++)
         {
             if(sold.get( i ).equals( missingPro.get(position).getRawImages().get(0) ))

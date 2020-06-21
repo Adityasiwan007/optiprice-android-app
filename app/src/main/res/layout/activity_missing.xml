@@ -122,7 +122,6 @@
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:fontFamily="@font/poppins_bold"-->
-
 <!--                android:textColor="@color/white"-->
 <!--                android:textSize="25px"-->
 <!--                app:layout_constraintBottom_toBottomOf="parent"-->
@@ -147,12 +146,12 @@
 
     <TextView
         android:id="@+id/pro_head"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_width="67dp"
+        android:layout_height="32dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Products"
         android:textColor="@color/black"
-        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toTopOf="@+id/pro_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
@@ -172,7 +171,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pro_head"
         app:layout_constraintVertical_bias="0" />
-
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"

@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                         preferenceManager.setUserName(PreferenceManager.USER_NAME, userName.getText().toString());
                         hearders.put("userName", preferenceManager.getUserName(PreferenceManager.USER_NAME));
                         preferenceManager.setUserName(PreferenceManager.USER_NAME, userName.getText().toString());
-                        ROOT_URL ="http://192.168.1.144:" + PORT + "/";
+                        ROOT_URL ="http://52.172.29.253:" + PORT + "/";
                         preferenceManager.setIp(PreferenceManager.IP, ipText.getText().toString());
                         IMAGE_URL_WARDROBE = ROOT_URL + "raw_images/";
                         IMAGE_URL_CATALOG = ROOT_URL + "catalog/";

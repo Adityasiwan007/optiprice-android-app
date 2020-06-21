@@ -1,6 +1,7 @@
 package com.ril.digitalwardrobeAI.View.Activity;
 
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import com.google.gson.Gson;
 import com.ril.digitalwardrobeAI.Model.MissingItembean;
 import com.ril.digitalwardrobeAI.Model.MissingItems;
 import com.ril.digitalwardrobeAI.Model.RestResponseBean;
+import com.ril.digitalwardrobeAI.Model.RestResponseBeanCart;
 import com.ril.digitalwardrobeAI.Network.Util;
 import com.ril.digitalwardrobeAI.R;
 import com.ril.digitalwardrobeAI.View.Adapter.BuyingGridAdapter;
@@ -32,6 +34,7 @@ import static com.ril.digitalwardrobeAI.Constants.hearders;
 public class BuyMainAI extends AppCompatActivity {
     ImageView back,popular;
     TextView review_txt;
+    public String[] cartIDs;
     private static final String TAG="BuyMailAI";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,4 +107,5 @@ public class BuyMainAI extends AppCompatActivity {
             }
         });
     }
+
 }

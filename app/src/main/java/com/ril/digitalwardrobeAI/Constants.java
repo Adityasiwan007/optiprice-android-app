@@ -25,7 +25,7 @@ public class Constants {
     public static HashMap<String,String> hearders;
     public  static String ROOT_URL;
     public  static String ROOT_URL_HOSTED;
-    public  static String PORT="8031";
+    public  static String PORT="8035";
     public  static String WARDROBE_TYPE="wardrobe";
     public static String FILTER="";
 

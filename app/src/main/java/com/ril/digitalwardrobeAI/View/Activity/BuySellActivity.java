@@ -160,6 +160,12 @@ public class BuySellActivity extends AppCompatActivity {
             }
         });
     }
+    public void onBackPressed() {
+        Intent intent1 = new Intent( BuySellActivity.this, LoginActivity.class );
+        //Intent intent1=new Intent( BuyingGridActivity.this,LoginActivity.class );
+        startActivity( intent1 );
+        super.onBackPressed();
+    }
 
 //    public static Camera getCameraInstance() {
 //        Camera camera = null;

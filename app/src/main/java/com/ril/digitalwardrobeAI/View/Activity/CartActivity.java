@@ -37,17 +37,20 @@ import static com.ril.digitalwardrobeAI.Constants.hearders;
 
 public class CartActivity extends AppCompatActivity implements com.ril.digitalwardrobeAI.View.Helper.RecyclerItemTouchHelperListener {
     private static DecimalFormat df = new DecimalFormat("0.00");
+    public static ArrayList<String> sellerList=new ArrayList<String>();
+    public static ArrayList<String> sellerList1=new ArrayList<String>();
     public String[] cartIDs;
     public MissingItembean detetedItem;
     private ConstraintLayout cs;
     public ArrayList<MissingItembean> cart_item = new ArrayList<MissingItembean>();
     private ArrayList<MissingItembean> currentSelectedItems = new ArrayList<>();
     ImageView back,payment;
-    String jsonString,send_back_missing;
+    String jsonString,send_back_missing,backPage;
     ConstraintLayout organge;
     TextView num,total_sum,selected,add_count;
-    String num_items;
+    String num_items,sellers_statement;
     CartAdapter adapter;
+    int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -56,6 +59,7 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
         Intent intent = getIntent();
         jsonString = intent.getStringExtra("cart_product");
         send_back_missing=intent.getStringExtra( "missing" );
+        backPage=intent.getStringExtra( "backPage" );
         //cart_item= new Gson().fromJson( jsonString,new TypeToken<ArrayList<MissingItembean>>(){}.getType() );
         back=(ImageView)findViewById( R.id.missingback ) ;
         num=(TextView)findViewById( R.id.num);
@@ -79,9 +83,18 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
 //                Intent intent = new Intent("custom-message");
 //                intent.putExtra("unit",cart_item);
 //                LocalBroadcastManager.getInstance(CartActivity.this).sendBroadcast(intent);
-                Intent i=new Intent(CartActivity.this,MissingActivity.class);
-                i.putExtra( "jsonObject",send_back_missing );
-                startActivity( i );
+                if(backPage.equals("grid")) {
+                    Intent i = new Intent(CartActivity.this, BuyingGridActivity.class);
+                    i.putExtra("jsonObject", send_back_missing);
+                    startActivity(i);
+                }
+                else
+                {
+                    Intent i = new Intent(CartActivity.this, BuyMarket.class);
+                    i.putExtra("jsonObject", send_back_missing);
+                    i.putExtra("selected",backPage);
+                    startActivity(i);
+                }
             }
         } );
 
@@ -101,6 +114,8 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
                     Gson gson = new Gson();
                     String payment = gson.toJson( currentSelectedItems );
                     intent1.putExtra( "payment", payment );
+                    intent1.putExtra("backPage",backPage);
+                    intent1.putExtra("payBack","cart");
                     startActivity( intent1 );
                 }
             }
@@ -117,9 +132,18 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
 
     }
     public void onBackPressed() {
-        Intent i=new Intent(CartActivity.this,MissingActivity.class);
-        i.putExtra( "jsonObject",send_back_missing );
-        startActivity( i );
+        if(backPage.equals("grid")) {
+            Intent i = new Intent(CartActivity.this, BuyingGridActivity.class);
+            i.putExtra("jsonObject", send_back_missing);
+            startActivity(i);
+        }
+        else
+        {
+            Intent i = new Intent(CartActivity.this, BuyMarket.class);
+            i.putExtra("jsonObject", send_back_missing);
+            i.putExtra("selected",backPage);
+            startActivity(i);
+        }
         super.onBackPressed();
     }
     private  void sum(ArrayList<MissingItembean> pro)
@@ -150,14 +174,30 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
     }
     public void setItemCount(ArrayList<MissingItembean> pro)
     {
+        sellerList.clear();
+        sellerList1.clear();
+        for(i=0;i<pro.size();i++)
+        {
+            sellerList.add(pro.get(i).getSeller());
+        }
+        sellerList1=removeDuplicates(sellerList);
+        if(sellerList1.size()<=1)
+        {
+            sellers_statement=" From "+sellerList1.size()+" User";
+        }
+        else
+        {
+            sellers_statement=" From "+sellerList1.size()+" Users";
+        }
         //count
         if(pro.size()==1)
         {
-            num_items= pro.size()+" Item";
+            num_items= pro.size()+" Item"+sellers_statement;
         }
         else {
-            num_items = pro.size() + " Items";
+            num_items = pro.size() + " Items"+sellers_statement;
         }
+
         num.setText( num_items );
 
 
@@ -216,12 +256,22 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
 
             if(cart_item.size()==0)
             {
-                Intent i=new Intent(CartActivity.this,MissingActivity.class);
-                i.putExtra( "jsonObject",send_back_missing );
-                startActivity( i );
+                if(backPage.equals("grid")) {
+                    Intent i = new Intent(CartActivity.this, BuyingGridActivity.class);
+                    i.putExtra("jsonObject", send_back_missing);
+                    startActivity(i);
+                }
+                else
+                {
+                    Intent i = new Intent(CartActivity.this, BuyMarket.class);
+                    i.putExtra("jsonObject", send_back_missing);
+                    i.putExtra("selected",backPage);
+                    startActivity(i);
+                }
             }
             removeFromServer(name);
             setItemCount( cart_item );
+            sum(cart_item);
 
 
 //            Snackbar snackbar = Snackbar
@@ -334,13 +384,22 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
 
                         if(cart_item.size()==0)
                         {
-                            Intent i=new Intent(CartActivity.this,MissingActivity.class);
-                            i.putExtra( "jsonObject",send_back_missing );
-                            startActivity( i );
+                            if(backPage.equals("grid")) {
+                                Intent i = new Intent(CartActivity.this, BuyingGridActivity.class);
+                                i.putExtra("jsonObject", send_back_missing);
+                                startActivity(i);
+                            }
+                            else
+                            {
+                                Intent i = new Intent(CartActivity.this, BuyMarket.class);
+                                i.putExtra("jsonObject", send_back_missing);
+                                i.putExtra("selected",backPage);
+                                startActivity(i);
+                            }
                         }
                         else
                         {
-                            sum( cart_item );  //for the price sum
+                            //sum( cart_item );  //for the price sum
                             setItemCount( cart_item );
 
                             try {
@@ -364,5 +423,25 @@ public class CartActivity extends AppCompatActivity implements com.ril.digitalwa
                 Toast.makeText(getApplicationContext(),"Unable to reach server.",Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list)
+    {
+
+        // Create a new ArrayList
+        ArrayList<T> newList = new ArrayList<T>();
+
+        // Traverse through the first list
+        for (T element : list) {
+
+            // If this element is not present in newList
+            // then add it
+            if (!newList.contains(element)) {
+
+                newList.add(element);
+            }
+        }
+
+        // return the new list
+        return newList;
     }
 }

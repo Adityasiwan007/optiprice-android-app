@@ -45,6 +45,7 @@ public class MissingActivity extends AppCompatActivity{
 
     ConstraintLayout organge;
     String sell_id;
+    int i,status;
     public static ArrayList<String> sold=new ArrayList<String>();
     public static ArrayList<String> sold1=new ArrayList<String>();
     String jsonString;
@@ -83,7 +84,7 @@ public class MissingActivity extends AppCompatActivity{
 //        number=(TextView)findViewById( R.id.num );
 //        add_count=(TextView)findViewById( R.id.add_count );
 //        organge=(ConstraintLayout) findViewById( R.id.count_layout );
-        grid=findViewById(R.id.grid_view);
+          grid=findViewById(R.id.grid_view);
 //        back.setOnClickListener( new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -146,12 +147,24 @@ private void initRecyclerView() throws JSONException {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
             selected_pro=missingPro.get( position );
-            Intent i = new Intent( MissingActivity.this, SellMainAI.class );
-            Gson gson = new Gson();
-            String select=gson.toJson(selected_pro);
-            i.putExtra( "selected", select );
-            startActivity(i);
-
+            status=0;
+            for(i=0;i<sold1.size();i++)
+            {
+                if(selected_pro.getRawImages().get(0).equals(sold1.get(i)))
+                {
+                    Toast.makeText(getApplicationContext(),"Item already in sale",Toast.LENGTH_SHORT).show();
+                    status=1;
+                    break;
+                }
+            }
+            if(status==0)
+            {
+                Intent i = new Intent(MissingActivity.this, SellMainAI.class);
+                Gson gson = new Gson();
+                String select = gson.toJson(selected_pro);
+                i.putExtra("selected", select);
+                startActivity(i);
+            }
         }
     } );
 }

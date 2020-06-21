@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import pl.droidsonroids.gif.GifImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -70,6 +72,8 @@ public class SellMainAI extends AppCompatActivity {
     private SeekBar seekBar;
     int inc=0,MAX=200;
     Timer timer;
+    CardView card1;
+    GifImageView load;
     TextView  leftText,rightText,heading,casual,pop_casual;
     boolean gotServerResponse=false;
     TextView max,min,title_pop,price,wear,plus,minus,TS_rare_text,TS_new_text,TS_drop_text,Condition_excellent_text,Size_l_text,Size_m_text,Size_s_text,Condition_brand_text,Condition_minor_text,Sale_yes_text,Sale_no_text,org_price,Usage_rare_text,Usage_mod_text,Usage_fre_text;
@@ -98,6 +102,8 @@ public class SellMainAI extends AppCompatActivity {
         Main_m=findViewById( R.id.main_m );
         Main_l=findViewById( R.id.main_l );
         sell=findViewById( R.id.orange_layout );
+        card1=findViewById(R.id.card1);
+        load=findViewById(R.id.load_gif);
 
 
         seekBar.setMax(200);
@@ -438,11 +444,11 @@ public class SellMainAI extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         //call the api here
-                        String path="../server/public/sell/"+selected_pro.getRawImages().get(0);
+                        String path="../Node_server/server/public/sell/"+selected_pro.getRawImages().get(0);
                         Double marketPrice=selected_pro.getPrice();
-
+                        card1.setVisibility(View.INVISIBLE);
+                        load.setVisibility(View.VISIBLE);
                         jsonParse_pop(path,pop_condition,marketPrice,pop_fs,pop_hot);
-
                         pop.dismiss();
                     }
                 } );
@@ -464,7 +470,7 @@ public class SellMainAI extends AppCompatActivity {
             }
         });
 
-        String path="../server/public/sell/"+selected_pro.getRawImages().get(0);
+        String path="../Node_server/server/public/sell/"+selected_pro.getRawImages().get(0);
         String condition="Excellent";
         Double marketPrice=selected_pro.getPrice();
         jsonParse(path,condition,marketPrice,1,"None");
@@ -510,6 +516,8 @@ public class SellMainAI extends AppCompatActivity {
             public void onResponse(Call<PredictingPrice> call, Response<PredictingPrice> response) {
                 if (response.isSuccessful()) {
                     PredictingPrice restResponse = response.body();
+                    card1.setVisibility(View.VISIBLE);
+                    load.setVisibility(View.INVISIBLE);
                     //for seekbar
                     second_cost=restResponse.getPricingJson();
                     gotServerResponse=true;
@@ -750,7 +758,7 @@ public class SellMainAI extends AppCompatActivity {
         double max=PRICE+3.00;
         seekBar.setMax((int) (max-min));
         sell.setBackgroundResource( R.drawable.square_sell_active);
-        Toast.makeText(getApplicationContext(), "Selling Price: $"+PRICE, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Selling Price: $"+df.format(roundToTwoDecimal( PRICE,2 )), Toast.LENGTH_SHORT).show();
         price.setText("$"+df.format(roundToTwoDecimal( PRICE,2 )));
         leftText.setText("$"+df.format( roundToTwoDecimal( min,2 ) ));
         rightText.setText("$"+df.format( roundToTwoDecimal( max,2 ) ));

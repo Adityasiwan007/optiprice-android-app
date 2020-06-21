@@ -15,7 +15,33 @@ public class MissingItembean {
     String manual_desc;
     String review;
     String seller;
+    String grade;
+    String f_scale;
+    String condition;
 
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getF_scale() {
+        return f_scale;
+    }
+
+    public void setF_scale(String f_scale) {
+        this.f_scale = f_scale;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
 
     public String getSeller() {
         return seller;

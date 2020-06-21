@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static com.ril.digitalwardrobeAI.Constants.ROOT_URL;
@@ -35,9 +36,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
     }
     private OnItemCheckListener onItemCheckListener;
 
-    TextView name,desc,price;
+    TextView name,desc,price,seller;
     ImageView pic;
     public String img_url;
+    private static DecimalFormat df = new DecimalFormat("0.00");
     public String price_text;
     private static final String TAG="CartAdapter";
     private String products_string = null;
@@ -67,12 +69,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final MissingItembean currentItem=products.get(position);
         Log.d(TAG,"onBindViewHolder: called");
-        price_text="$"+products.get(position).getPrice();
+        price_text="$"+df.format(products.get(position).getPrice());
         price.setText( price_text );
         img_url=ROOT_URL+"popular/"+products.get(position).getRawImages().get(0);
         Picasso.get().load( Constants.IMAGE_THUMBNAIL_URL_WARDROBE + products.get(position).getRawImages().get(0)).into(pic);
         name.setText( products.get(position).getManual_desc());
         desc.setText(products.get(position).getOccasion());
+        seller.setText(products.get(position).getSeller());
 
 
 
@@ -128,6 +131,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
             pic=itemView.findViewById( R.id.pro_pic );
             viewBackground=itemView.findViewById( R.id.card_back );
             viewForeground=itemView.findViewById( R.id.card );
+            seller=itemView.findViewById(R.id.product_seller);
         }
         public void setOnClickListener(View.OnClickListener onClickListener) {
             itemView.setOnClickListener(onClickListener);

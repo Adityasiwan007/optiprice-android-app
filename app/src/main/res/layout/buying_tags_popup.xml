@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="310dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/pop_corner">
+
+    <ImageView
+        android:id="@+id/pop_cross"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/cross_tagpopup"
+        app:layout_constraintBottom_toTopOf="@id/right_divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/pop_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Versace Red Leather Jacket"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
+
+    <View
+        android:id="@+id/right_divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/subtext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169" />
+
+
+    <TextView
+        android:id="@+id/tags_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Tags"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toStartOf="@+id/tags_tag1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/tags_tag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toStartOf="@+id/tags_tag2"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toEndOf="@+id/tags_txt"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.096">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Womens Wear"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tags_tag1"
+            app:layout_constraintEnd_toEndOf="@+id/tags_tag1"
+            app:layout_constraintStart_toStartOf="@+id/tags_tag1"
+            app:layout_constraintTop_toTopOf="@+id/tags_tag1" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/tags_tag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toStartOf="@+id/tags_tag3"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toEndOf="@+id/tags_tag1"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.096">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Wear"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tags_tag2"
+            app:layout_constraintEnd_toEndOf="@+id/tags_tag2"
+            app:layout_constraintStart_toStartOf="@+id/tags_tag2"
+            app:layout_constraintTop_toTopOf="@+id/tags_tag2" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/tags_tag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toStartOf="@+id/added"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toEndOf="@+id/tags_tag2"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.096">
+
+        <TextView
+            android:id="@+id/pop_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Casual Wear"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tags_tag3"
+            app:layout_constraintEnd_toEndOf="@+id/tags_tag3"
+            app:layout_constraintStart_toStartOf="@+id/tags_tag3"
+            app:layout_constraintTop_toTopOf="@+id/tags_tag3" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/added"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="invisible"
+        android:src="@drawable/add_tags"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toEndOf="@+id/tags_tag3"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <TextView
+        android:id="@+id/size_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Size"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.29" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/size_tag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toEndOf="@+id/size_txt"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.30">
+
+        <TextView
+            android:id="@+id/size_tag1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/size_tag1"
+            app:layout_constraintEnd_toEndOf="@+id/size_tag1"
+            app:layout_constraintStart_toStartOf="@+id/size_tag1"
+            app:layout_constraintTop_toTopOf="@+id/size_tag1" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/size_tag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toEndOf="@+id/size_tag1"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.30">
+
+        <TextView
+            android:id="@+id/size_tag2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/size_tag2"
+            app:layout_constraintEnd_toEndOf="@+id/size_tag2"
+            app:layout_constraintStart_toStartOf="@+id/size_tag2"
+            app:layout_constraintTop_toTopOf="@+id/size_tag2" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/size_tag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toEndOf="@+id/size_tag2"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.30">
+
+        <TextView
+            android:id="@+id/size_tag3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="L"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/size_tag3"
+            app:layout_constraintEnd_toEndOf="@+id/size_tag3"
+            app:layout_constraintStart_toStartOf="@+id/size_tag3"
+            app:layout_constraintTop_toTopOf="@+id/size_tag3" />
+    </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/trend_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Grade"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/trend_tag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toEndOf="@+id/trend_txt"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.505">
+
+        <TextView
+            android:id="@+id/trend_tag2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="None"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/trend_tag2"
+            app:layout_constraintEnd_toEndOf="@+id/trend_tag2"
+            app:layout_constraintStart_toStartOf="@+id/trend_tag2"
+            app:layout_constraintTop_toTopOf="@+id/trend_tag2" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/trend_tag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toEndOf="@+id/trend_tag2"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.505">
+
+        <TextView
+            android:id="@+id/trend_tag3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rare Find"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/trend_tag3"
+            app:layout_constraintEnd_toEndOf="@+id/trend_tag3"
+            app:layout_constraintStart_toStartOf="@+id/trend_tag3"
+            app:layout_constraintTop_toTopOf="@+id/trend_tag3" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/trend_tag4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toEndOf="@+id/trend_tag3"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.505">
+
+        <TextView
+            android:id="@+id/trend_tag4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="Price Drop"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/trend_tag4"
+            app:layout_constraintEnd_toEndOf="@+id/trend_tag4"
+            app:layout_constraintStart_toStartOf="@+id/trend_tag4"
+            app:layout_constraintTop_toTopOf="@+id/trend_tag4" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/condition_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Condition"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.71" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/condition_tag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toEndOf="@+id/condition_txt"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.70">
+
+        <TextView
+            android:id="@+id/condition_tag1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excellent"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/condition_tag1"
+            app:layout_constraintEnd_toEndOf="@+id/condition_tag1"
+            app:layout_constraintStart_toStartOf="@+id/condition_tag1"
+            app:layout_constraintTop_toTopOf="@+id/condition_tag1" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/condition_tag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toEndOf="@+id/condition_tag1"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.70">
+
+        <TextView
+            android:id="@+id/condition_tag2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand New"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/condition_tag2"
+            app:layout_constraintEnd_toEndOf="@+id/condition_tag2"
+            app:layout_constraintStart_toStartOf="@+id/condition_tag2"
+            app:layout_constraintTop_toTopOf="@+id/condition_tag2" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/condition_tag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/condition_tag2"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.70">
+
+        <TextView
+            android:id="@+id/condition_tag3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minor Fades"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/condition_tag3"
+            app:layout_constraintEnd_toEndOf="@+id/condition_tag3"
+            app:layout_constraintStart_toStartOf="@+id/condition_tag3"
+            app:layout_constraintTop_toTopOf="@+id/condition_tag3" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Final Sale"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/sale_tag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back_blue"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toEndOf="@+id/sale"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.89">
+
+        <TextView
+            android:id="@+id/sale_tag1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="Yes"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sale_tag1"
+            app:layout_constraintEnd_toEndOf="@+id/sale_tag1"
+            app:layout_constraintStart_toStartOf="@+id/sale_tag1"
+            app:layout_constraintTop_toTopOf="@+id/sale_tag1" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/sale_tag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tags_back"
+        app:layout_constraintBottom_toTopOf="@+id/right_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toEndOf="@+id/sale_tag1"
+        app:layout_constraintTop_toBottomOf="@+id/right_divider1"
+        app:layout_constraintVertical_bias="0.89">
+
+        <TextView
+            android:id="@+id/sale_tag2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="No"
+            android:textColor="@color/subtext"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sale_tag2"
+            app:layout_constraintEnd_toEndOf="@+id/sale_tag2"
+            app:layout_constraintStart_toStartOf="@+id/sale_tag2"
+            app:layout_constraintTop_toTopOf="@+id/sale_tag2" />
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/right_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:background="@color/subtext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+
+
+</android.support.constraint.ConstraintLayout>

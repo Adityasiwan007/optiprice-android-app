@@ -38,8 +38,9 @@ import static com.ril.digitalwardrobeAI.Constants.hearders;
 
 public class PaymentActivity extends AppCompatActivity {
     String card_type="non";
+    String card_type_final="none";
     private static DecimalFormat df = new DecimalFormat("0.00");
-    String jsonString,cart,missing;
+    String jsonString,cart,missing,backPage,payBack;
     ArrayList<MissingItembean> payment_item;
     Dialog pop,pop1;
 
@@ -53,6 +54,9 @@ public class PaymentActivity extends AppCompatActivity {
         jsonString = intent.getStringExtra("payment");
         cart=intent.getStringExtra( "cart_item" ); //to be send back
         missing=intent.getStringExtra( "missing" ); //to be send back
+        backPage=intent.getStringExtra( "backPage" ); //to be send back
+        payBack=intent.getStringExtra( "payBack" ); //to be send back
+
         payment_item= new Gson().fromJson( jsonString,new TypeToken<ArrayList<MissingItembean>>(){}.getType() );
 
         back=(ImageView)findViewById( R.id.cartback );
@@ -68,10 +72,21 @@ public class PaymentActivity extends AppCompatActivity {
         back.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent( PaymentActivity.this,CartActivity.class );
-                intent1.putExtra("cart_product",cart);
-                intent1.putExtra( "missing",missing );
-                startActivity( intent1 );
+                if(backPage.equals("grid") || payBack.equals("cart"))
+                {
+                    Intent intent1=new Intent( PaymentActivity.this,CartActivity.class );
+                    intent1.putExtra("cart_product",cart);
+                    intent1.putExtra( "missing",missing );
+                    intent1.putExtra("backPage",backPage);
+                    startActivity( intent1 );
+                }
+                else
+                {
+                    Intent intent1=new Intent( PaymentActivity.this,BuyMarket.class );
+                    intent1.putExtra( "missing",missing );
+                    intent1.putExtra("selected",backPage);
+                    startActivity( intent1 );
+                }
             }
         } );
 
@@ -199,6 +214,10 @@ public class PaymentActivity extends AppCompatActivity {
                 {
                     Toast.makeText(PaymentActivity.this, "Please select the card.", Toast.LENGTH_SHORT).show();
                 }
+                else if(!card_type_final.equals("none"))
+                {
+                    Toast.makeText(PaymentActivity.this, "Payment already done", Toast.LENGTH_SHORT).show();
+                }
                 else {
                 pop = new Dialog( PaymentActivity.this );
                 pop.getWindow().setBackgroundDrawable( new ColorDrawable( Color.TRANSPARENT ) );
@@ -247,6 +266,7 @@ public class PaymentActivity extends AppCompatActivity {
                         pop1.show();
                         price_summary = (TextView) pop1.findViewById( R.id.cost );
                         price_summary.setText( getFinalCost( payment_item ) );
+                        card_type_final=card_type;
                         for(int i=0;i<payment_item.size();i++)
                         {
                             removeFromServer( payment_item.get(i).getRawImages().get( 0 ) );
@@ -379,10 +399,21 @@ public class PaymentActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        Intent intent1=new Intent( PaymentActivity.this,CartActivity.class );
-        intent1.putExtra("cart_product",cart);
-        intent1.putExtra( "missing",missing );
-        startActivity( intent1 );
+        if(backPage.equals("grid") || payBack.equals("cart"))
+        {
+            Intent intent1=new Intent( PaymentActivity.this,CartActivity.class );
+            intent1.putExtra("cart_product",cart);
+            intent1.putExtra( "missing",missing );
+            intent1.putExtra("backPage",backPage);
+            startActivity( intent1 );
+        }
+        else
+        {
+            Intent intent1=new Intent( PaymentActivity.this,BuyMarket.class );
+            intent1.putExtra( "missing",missing );
+            intent1.putExtra("selected",backPage);
+            startActivity( intent1 );
+        }
         super.onBackPressed();
     }
 

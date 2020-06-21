@@ -29,6 +29,11 @@
           <item name="colorSwitchThumbNormal">#FA4F3C</item>
         <item name="colorControlNormal">#FA4F3C</item>
         <item name="android:colorForeground">#FA4F3C</item>
+    </style>
 
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/subtext</item>
+        <item name="colorControlActivated">@color/cart_orange</item>
+        <item name="background">@color/subtext</item>
     </style>
 </resources>

@@ -35,17 +35,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.353" />
 
-        <ImageView
-            android:id="@+id/cart"
-            android:layout_width="22dp"
-            android:layout_height="21dp"
-            android:src="@drawable/missingcart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.928"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.352" />
+<!--        <ImageView-->
+<!--            android:id="@+id/cart"-->
+<!--            android:layout_width="22dp"-->
+<!--            android:layout_height="21dp"-->
+<!--            android:src="@drawable/missingcart"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.928"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.352" />-->
 
         <TextView
             android:layout_width="wrap_content"
